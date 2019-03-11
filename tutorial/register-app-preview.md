@@ -1,0 +1,40 @@
+<!-- markdownlint-disable MD002 MD041 -->
+
+<span data-ttu-id="668cf-101">In dieser Übung erstellen Sie eine neue Azure Active Directory-Anwendung, die zum Bereitstellen der Delegierten Berechtigungen für den benutzerdefinierten Connector verwendet wird.</span><span class="sxs-lookup"><span data-stu-id="668cf-101">In this exercise, you will create a new Azure Active Directory Application which will be used to provide the delegated permissions for the custom connector.</span></span>
+
+<span data-ttu-id="668cf-102">Öffnen Sie einen Browser, und navigieren Sie zu [Azure Active Directory Admin Center](https://aad.portal.azure.com).</span><span class="sxs-lookup"><span data-stu-id="668cf-102">Open a browser and navigate to [Azure Active Directory admin center](https://aad.portal.azure.com).</span></span> <span data-ttu-id="668cf-103">Wählen Sie im linken Navigationsmenü den Link **Azure Active Directory** aus, und wählen Sie dann den Eintrag **App-Registrierungen (Vorschau)** im Abschnitt **Verwalten** des **Azure Active Directory** -Blade aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-103">Choose the **Azure Active Directory** link in the left navigation menu, then choose the **App registrations (Preview)** entry in the **Manage** section of the **Azure Active Directory** blade.</span></span>
+
+![Ein Screenshot des Azure Active Directory-Blades im Azure Active Directory Admin Center](./images/app-reg-preview1.png)
+
+<span data-ttu-id="668cf-105">Wählen Sie das Menüelement **neue Registrierung** oben auf dem Blatt **App-Registrierungen (Vorschau)** aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-105">Choose the **New registration** menu item at the top of the **App Registrations (Preview)** blade.</span></span>
+
+![Ein Screenshot des Blades "App-Registrierungen" im Azure Active Directory Admin Center](./images/app-reg-preview2.png)
+
+<span data-ttu-id="668cf-107">Geben `MS Graph Batch App` Sie in das Feld **Name** ein.</span><span class="sxs-lookup"><span data-stu-id="668cf-107">Enter `MS Graph Batch App` in the **Name** field.</span></span> <span data-ttu-id="668cf-108">Wählen Sie im Abschnitt **unterstützte Kontotypen** **Konten in einem beliebigen Organisations Verzeichnis**aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-108">In the **Supported account types** section, select **Accounts in any organizational directory**.</span></span> <span data-ttu-id="668cf-109">Lassen Sie den Abschnitt umLeitungs- **URI** leer, und wählen Sie **registrieren**.</span><span class="sxs-lookup"><span data-stu-id="668cf-109">Leave the **Redirect URI** section blank and choose **Register**.</span></span>
+
+![Screenshot des Registers "Application Blade" im Azure Active Directory Admin Center](./images/app-reg-preview3.png)
+
+<span data-ttu-id="668cf-111">Kopieren Sie auf dem Blade- **Batch-APP von MS Graph** die **Anwendungs-ID (Client)**.</span><span class="sxs-lookup"><span data-stu-id="668cf-111">On the **MS Graph Batch App** blade, copy the **Application (client) ID**.</span></span> <span data-ttu-id="668cf-112">Sie benötigen dies in der nächsten Übung.</span><span class="sxs-lookup"><span data-stu-id="668cf-112">You'll need this in the next exercise.</span></span>
+
+![Screenshot der registrierten Anwendungsseite](./images/app-reg-preview4.png)
+
+<span data-ttu-id="668cf-114">Wählen Sie den Eintrag **API-Berechtigungen** im Abschnitt **Verwalten** des Batch-App-Blatts **MS Graph** aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-114">Choose the **API permissions** entry in the **Manage** section of the **MS Graph Batch App** blade.</span></span> <span data-ttu-id="668cf-115">Wählen Sie **Berechtigung hinzufügen** unter **API-Berechtigungen**aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-115">Choose **Add a permission** under **API permissions**.</span></span>
+
+![Screenshot des API-Berechtigungs Blatts](./images/app-perms-preview1.png)
+
+<span data-ttu-id="668cf-117">Klicken Sie im Blatt **API-Berechtigungen anfordern** auf **Microsoft Graph**, und wählen Sie dann **Delegierte Berechtigungen**aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-117">In the **Request API permissions** blade, choose the **Microsoft Graph**, then choose **Delegated permissions**.</span></span> <span data-ttu-id="668cf-118">Suchen `group`, und wählen Sie dann die Berechtigung **alle Gruppen mit Berechtigungen Lesen und schreiben** aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-118">Search for `group`, then select the **Read and write all groups** delegated permission.</span></span> <span data-ttu-id="668cf-119">Wählen Sie am unteren Rand des Blades **Berechtigungen hinzufügen** aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-119">Choose **Add permissions** at the bottom of the blade.</span></span>
+
+ ![Screenshot des Zugriffs Blatts für Anforderungs-API-Berechtigungen](./images/app-perms-preview2.png)
+
+<span data-ttu-id="668cf-121">Wählen Sie den Eintrag **Zertifikate und** geheimen im Abschnitt **Verwalten** des Batch-App-Blatts **MS Graph** aus, und wählen Sie dann **neuer Client Schlüssel**aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-121">Choose the **Certificates and secrets** entry in the **Manage** section of the **MS Graph Batch App** blade, then choose **New client secret**.</span></span> <span data-ttu-id="668cf-122">Geben `forever` Sie in die **Beschreibung** ein, und wählen Sie **nie** unter **Expires**aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-122">Enter `forever` in the **Description** and select **Never** under **Expires**.</span></span> <span data-ttu-id="668cf-123">Wählen Sie **Hinzufügen** aus.</span><span class="sxs-lookup"><span data-stu-id="668cf-123">Choose **Add**.</span></span>
+
+![Ein Screenshot des "Certificate and Secrets"-Blatts](./images/app-key-preview1.png)
+
+<span data-ttu-id="668cf-125">Kopieren Sie den Schlüsselwert für den neuen Schlüssel.</span><span class="sxs-lookup"><span data-stu-id="668cf-125">Copy the key value for the new key.</span></span> <span data-ttu-id="668cf-126">Sie benötigen dies in der nächsten Übung.</span><span class="sxs-lookup"><span data-stu-id="668cf-126">You'll need this in the next exercise.</span></span>
+
+![Screenshot des neuen geheimen Clients](./images/app-key-preview2.png)
+
+> [!IMPORTANT]
+> <span data-ttu-id="668cf-128">Dieser Schritt ist wichtig, da der Schlüssel nicht zugegriffen werden kann, nachdem Sie dieses Blade geschlossen haben.</span><span class="sxs-lookup"><span data-stu-id="668cf-128">This step is critical as the key will not be accessible once you close this blade.</span></span> <span data-ttu-id="668cf-129">Speichern Sie diesen Schlüssel in einem Text-Editor für die nächsten Übungen.</span><span class="sxs-lookup"><span data-stu-id="668cf-129">Save this key to a text editor for use in upcoming exercises.</span></span>
+
+<span data-ttu-id="668cf-130">Um die Verwaltung zusätzlicher Dienste, auf die über Microsoft Graph zugegriffen werden kann, einschließlich der Teams-Eigenschaften, zu ermöglichen, müssen Sie zusätzliche, geeignete Bereiche auswählen, um die Verwaltung bestimmter Dienste zu ermöglichen.</span><span class="sxs-lookup"><span data-stu-id="668cf-130">To enable management of additional services accessible via the Microsoft Graph, including Teams properties, you would need to select additional, appropriate scopes to enable managing specific services.</span></span> <span data-ttu-id="668cf-131">Wenn Sie beispielsweise unsere Lösung erweitern möchten, um die Erstellung von OneNote-Notizbüchern oder Plan Plänen, Buckets und Aufgaben zu ermöglichen, müssen Sie die erforderlichen Berechtigungs Bereiche für die relevanten APIs hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="668cf-131">For example, to extend our solution to enable creating OneNote Notebooks or Planner plans, buckets and tasks you would need to add the required permission scopes for the relevant APIs.</span></span>
