@@ -1,12 +1,12 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-In dieser Übung erstellen Sie einen Fluss zur Verwendung des benutzerdefinierten Konnektors, den Sie in den vorherigen Übungen erstellt haben, um ein Microsoft-Team zu erstellen und zu konfigurieren. Der Fluss verwendet den benutzerdefinierten Connector, um eine POST-Anforderung zum Erstellen einer einheitlichen Office 365-Gruppe zu senden, hält während der Gruppenerstellung eine Verzögerung an und sendet dann eine PUT-Anforderung, um die Gruppe einem Microsoft-Team zuzuordnen.
+In dieser Übung erstellen Sie einen Fluss zur Verwendung des benutzerdefinierten Konnektors, den Sie in den vorherigen Übungen erstellt haben, um ein Microsoft-Team zu erstellen und zu konfigurieren. Der Fluss verwendet den benutzerdefinierten Connector, um eine Post-Anforderung zum Erstellen einer einheitlichen Office 365-Gruppe zu senden, hält während der Gruppenerstellung eine Verzögerung an und sendet dann eine PUT-Anforderung, um die Gruppe einem Microsoft-Team zuzuordnen.
 
 Am Ende sieht ihr Ablauf wie in der folgenden Abbildung aus:
 
 ![Screenshot des abgeschlossenen Ablaufs](./images/flow-team1.png)
 
-Öffnen Sie [Microsoft Flow](https://flow.microsoft.com) in Ihrem Browser, und melden Sie sich mit ihrem Office 365-mandantenadministrator Konto an. Wählen Sie **meine Flows** in der linken Navigationsleiste aus. Wählen Sie **neu**, und erstellen Sie dann **aus leer**. Wählen Sie **Create from Blank aus**. Geben `Manual` Sie in das Suchfeld ein, und fügen Sie den Trigger **manuell Trigger a Flow** hinzu.
+Öffnen Sie [Microsoft Flow](https://flow.microsoft.com) in Ihrem Browser, und melden Sie sich mit Ihrem Office 365-mandantenadministrator Konto an. Wählen Sie **meine Flows** in der linken Navigationsleiste aus. Wählen Sie **neu**, und erstellen Sie dann **aus leer**. Wählen Sie **Create from Blank aus**. Geben `Manual` Sie in das Suchfeld ein, und fügen Sie den Trigger **manuell Trigger a Flow** hinzu.
 
 Wählen Sie Add a Input aus, wählen Sie `Name` **Text** aus, und geben Sie als Titel **ein**.
 

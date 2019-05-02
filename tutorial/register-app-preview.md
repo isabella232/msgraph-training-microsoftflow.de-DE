@@ -2,15 +2,15 @@
 
 In dieser Übung erstellen Sie eine neue Azure Active Directory-Anwendung, die zum Bereitstellen der Delegierten Berechtigungen für den benutzerdefinierten Connector verwendet wird.
 
-Öffnen Sie einen Browser, und navigieren Sie zu [Azure Active Directory Admin Center](https://aad.portal.azure.com). Wählen Sie im linken Navigationsmenü den Link **Azure Active Directory** aus, und wählen Sie dann den Eintrag **App-Registrierungen (Vorschau)** im Abschnitt **Verwalten** des **Azure Active Directory** -Blade aus.
+Öffnen Sie einen Browser, und navigieren Sie zu [Azure Active Directory Admin Center](https://aad.portal.azure.com). Klicken Sie im linken Navigationsmenü auf den Link **Azure Active Directory** , und wählen Sie dann im Abschnitt **Verwalten** des **Azure Active Directory** -Blades den Eintrag **App Registrations** aus.
 
 ![Ein Screenshot des Azure Active Directory-Blades im Azure Active Directory Admin Center](./images/app-reg-preview1.png)
 
-Wählen Sie das Menüelement **neue Registrierung** oben auf dem Blatt **App-Registrierungen (Vorschau)** aus.
+Wählen Sie das Menüelement **neue Registrierung** oben auf dem Blatt **App** -Registrierungen aus.
 
 ![Ein Screenshot des Blades "App-Registrierungen" im Azure Active Directory Admin Center](./images/app-reg-preview2.png)
 
-Geben `MS Graph Batch App` Sie in das Feld **Name** ein. Wählen Sie im Abschnitt **unterstützte Kontotypen** **Konten in einem beliebigen Organisations Verzeichnis**aus. Lassen Sie den Abschnitt umLeitungs- **URI** leer, und wählen Sie **registrieren**.
+Geben `MS Graph Batch App` Sie in das Feld **Name** ein. Wählen Sie im Abschnitt **unterstützte Kontotypen** **Konten in einem beliebigen Organisations Verzeichnis**aus. Lassen Sie den Abschnitt Umleitungs- **URI** leer, und wählen Sie **registrieren**.
 
 ![Screenshot des Registers "Application Blade" im Azure Active Directory Admin Center](./images/app-reg-preview3.png)
 
