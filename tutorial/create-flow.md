@@ -1,20 +1,20 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-In dieser Übung erstellen Sie einen Fluss zur Verwendung des benutzerdefinierten Konnektors, den Sie in den vorherigen Übungen erstellt haben, um ein Microsoft-Team zu erstellen und zu konfigurieren. Der Fluss verwendet den benutzerdefinierten Connector, um eine Post-Anforderung zum Erstellen einer einheitlichen Office 365-Gruppe zu senden, hält während der Gruppenerstellung eine Verzögerung an und sendet dann eine PUT-Anforderung, um die Gruppe einem Microsoft-Team zuzuordnen.
+In dieser Übung erstellen Sie einen Fluss für die Verwendung des benutzerdefinierten Konnektors, den Sie in den vorherigen Übungen erstellt haben, um ein Microsoft-Team zu erstellen und zu konfigurieren. Der Fluss verwendet den benutzerdefinierten Connector zum Senden einer POST-Anforderung, um eine Office 365 Unified Group zu erstellen, wird für eine Verzögerung angehalten, während die Gruppenerstellung abgeschlossen wird, und sendet dann eine PUT-Anforderung, um die Gruppe einem Microsoft-Team zuzuordnen.
 
-Am Ende sieht ihr Ablauf wie in der folgenden Abbildung aus:
+Am Ende sieht der Fluss ähnlich wie in der folgenden Abbildung aus:
 
-![Screenshot des abgeschlossenen Ablaufs](./images/flow-team1.png)
+![Ein Screenshot des abgeschlossenen Flusses](./images/flow-team1.png)
 
-Öffnen Sie [Microsoft Flow](https://flow.microsoft.com) in Ihrem Browser, und melden Sie sich mit Ihrem Office 365-mandantenadministrator Konto an. Wählen Sie **meine Flows** in der linken Navigationsleiste aus. Wählen Sie **neu**, und erstellen Sie dann **aus leer**. Wählen Sie **Create from Blank aus**. Geben `Manual` Sie in das Suchfeld ein, und fügen Sie den Trigger **manuell Trigger a Flow** hinzu.
+Öffnen Sie [Microsoft Flow](https://flow.microsoft.com) in Ihrem Browser, und melden Sie sich mit Ihrem Office 365 mandantenadministrator Konto an. Wählen Sie **meine Flows** in der linken Navigationsleiste aus. Wählen Sie **neu**und dann **sofort--von leer aus**. Geben `Create Team` Sie für den **Flussnamen**ein, und wählen Sie dann unter Wählen Sie aus **, wie dieser Fluss ausgelöst**wird **einen Fluss manuell auslösen** aus. Klicken Sie auf **Erstellen**.
 
-Wählen Sie Add a Input aus, wählen Sie `Name` **Text** aus, und geben Sie als Titel **ein**.
+Wählen Sie das **manuelle Auslösen eines Fluss** Elements aus, wählen Sie dann **Eingabe hinzufügen**aus, `Name` wählen Sie **Text** aus, und geben Sie als Titel ein.
 
-![Ein Screenshot des manuellen Auslösen eines Flow-Triggers](./images/flow-team6.png)
+![Ein Screenshot des manuellen Triggers eines Fluss Auslösers](./images/flow-team6.png)
 
-Wählen Sie **neuer Schritt** aus `Batch` , und geben Sie in das Suchfeld ein. Fügen Sie die Batch-Konnektor-Aktion **MS Graph** hinzu. Wählen Sie die Auslassungspunkte aus, `Batch POST-groups`und benennen Sie diese Aktion in um.
+Wählen Sie **neuer Schritt** aus `Batch` , und geben Sie das Suchfeld ein. Fügen Sie die **MS Graph Batch Connector** -Aktion hinzu. Wählen Sie die Auslassungspunkte aus, `Batch POST-groups`und benennen Sie diese Aktion um.
 
-Fügen Sie den folgenden Code in **** das Textfeld Text der Aktion ein.
+Fügen **Sie den folgenden Code in das Feld** Text der Aktion ein.
 
 ```json
 {
@@ -37,15 +37,15 @@ Fügen Sie den folgenden Code in **** das Textfeld Text der Aktion ein.
 }
 ```
 
-Ersetzen Sie `REPLACE` die einzelnen Platzhalter `Name` , indem Sie im Menü dynamischer **Inhalt hinzufügen** den Wert aus dem manuellen Trigger auswählen.
+Ersetzen Sie `REPLACE` die einzelnen Platzhalter `Name` durch Auswählen des Werts aus dem manuellen Auslöser aus dem Menü **dynamischer Inhalt hinzufügen** .
 
 ![Ein Screenshot des Menüs für dynamische Inhalte in Microsoft Flow](./images/flow-team2.png)
 
-Wählen Sie **neuer Schritt**, suchen `delay` Sie nach und fügen Sie eine **Verzögerungs** Aktion hinzu, und konfigurieren Sie Sie für 1 Minute.
+Wählen Sie **neuer Schritt**aus, `delay` suchen Sie nach einer **Verzögerungs** Aktion, und konfigurieren Sie Sie für 1 Minute.
 
-Wählen Sie **neuer Schritt** aus `Batch` , und geben Sie in das Suchfeld ein. Fügen Sie die Batch-Konnektor-Aktion **MS Graph** hinzu. Wählen Sie die Auslassungspunkte aus, `Batch PUT-team`und benennen Sie diese Aktion in um.
+Wählen Sie **neuer Schritt** aus `Batch` , und geben Sie das Suchfeld ein. Fügen Sie die **MS Graph Batch Connector** -Aktion hinzu. Wählen Sie die Auslassungspunkte aus, `Batch PUT-team`und benennen Sie diese Aktion um.
 
-Fügen Sie den folgenden Code in **** das Textfeld Text der Aktion ein.
+Fügen **Sie den folgenden Code in das Feld** Text der Aktion ein.
 
 ```json
 {
@@ -75,32 +75,27 @@ Fügen Sie den folgenden Code in **** das Textfeld Text der Aktion ein.
 }
 ```
 
-Wählen Sie `REPLACE` den Platzhalter aus, und wählen Sie dann im dynamischen Inhaltsbereich **Ausdruck** aus. Fügen Sie die folgende Formel in den **Ausdruck**ein.
+Wählen Sie `REPLACE` den Platzhalter aus, und wählen Sie dann im Bereich dynamischer Inhalt den **Begriff Ausdruck** aus. Fügen Sie die folgende Formel in den **Ausdruck**ein.
 
 ```js
 body('Batch_POST-groups').responses[0].body.id
 ```
 
-![Ein Screenshot des Ausdrucks im dynamischen Inhaltsbereich](./images/flow-formula.png)
+![Ein Screenshot des Ausdrucks im Bereich "dynamischer Inhalt"](./images/flow-formula.png)
 
 Diese Formel gibt an, dass die Gruppen-ID aus dem Ergebnis der ersten Aktion verwendet werden soll.
 
-![Screenshot des aktualisierten Aktions Texts](./images/flow-team3.png)
+![Ein Screenshot des aktualisierten Aktions Texts](./images/flow-team3.png)
 
-Wählen Sie **Speichern**und dann Flow aus, und wählen Sie **Test** aus, um den Fluss auszuführen.
+Wählen Sie **Speichern**aus, und wählen Sie dann **Test** aus, um den Fluss auszuführen.
 
 > [!TIP]
-> Wenn Sie einen Fehler wie `The template validation failed: 'The action(s) 'Batch_POST-groups' referenced by 'inputs' in action 'Batch_2' are not defined in the template'`erhalten, ist der Ausdruck falsch und wahrscheinlich verweist auf eine Fluss Aktion, die nicht gefunden werden kann. Stellen Sie sicher, dass der Name der Aktion, auf die Sie verweisen, genau übereinstimmt.
+> Wenn ein Fehler wie `The template validation failed: 'The action(s) 'Batch_POST-groups' referenced by 'inputs' in action 'Batch_2' are not defined in the template'`angezeigt wird, ist der Ausdruck falsch und verweist wahrscheinlich auf eine Fluss Aktion, die nicht gefunden werden kann. Stellen Sie sicher, dass der Name der Aktion, auf die verwiesen wird, genau übereinstimmt.
 
-Wählen Sie das Optionsfeld **Ich werde die Aktion Auslöser ausführen** , und wählen Sie **& testen**. Klicken Sie im Dialogfeld auf **weiter** . Geben Sie einen Namen ohne Leerzeichen, und wählen Sie **Flow ausführen** , um ein Team zu erstellen.
+Wählen Sie das Optionsfeld **Ich werde das Trigger** -Aktion ausführen aus, und wählen Sie **#a0 Test speichern**aus. Wählen Sie im Dialogfeld **weiter** aus. Geben Sie einen Namen ohne Leerzeichen ein, und wählen Sie **Lauf Fluss** aus, um ein Team zu erstellen.
 
-![Screenshot des Dialogfelds "Run Flow"](./images/flow-team4.png)
+![Ein Screenshot des Dialogfelds "Ablaufsteuerung"](./images/flow-team4.png)
 
-Klicken Sie abschließend auf den Link **Fluss Laufaktivität anzeigen** , und wählen Sie dann den laufenden Ablauf aus, um das Aktivitätsprotokoll anzuzeigen.
-
-> [!NOTE]
-> Möglicherweise müssen Sie auf die laufende Fluss Instanz in der Liste Verlauf ausführen klicken, um die Ausführung des Flows anzuzeigen.
-
-Nach Abschluss des Ablaufs wurden Ihre Office 365-Gruppe und Ihr Team konfiguriert. Wählen Sie die Batch Aktionselemente aus, um die Ergebnisse der JSON-Batch Aufrufe anzuzeigen. Die `outputs` der `Batch PUT-team` Aktion sollte den Statuscode 201 für eine erfolgreiche Team Zuordnung aufweisen, die dem folgenden Bild ähnelt.
+Klicken Sie abschließend auf **Fertig** , um das Aktivitätsprotokoll anzuzeigen. Nachdem der Fluss abgeschlossen ist, wurden Ihre Office 365 Gruppe und Ihr Team konfiguriert. Wählen Sie die Batch Aktionselemente aus, um die Ergebnisse der JSON-Batch Aufrufe anzuzeigen. Die `outputs` der `Batch PUT-team` Aktion sollte den Statuscode 201 für eine erfolgreiche Team Zuordnung ähnlich wie in der Abbildung unten haben.
 
 ![Ein Screenshot des erfolgreichen Ablauf Aktivitätsprotokolls](./images/flow-team5.png)

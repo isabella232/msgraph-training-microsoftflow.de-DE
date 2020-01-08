@@ -1,40 +1,40 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-In dieser Übung erstellen Sie eine neue Azure Active Directory-Anwendung, die zum Bereitstellen der Delegierten Berechtigungen für den benutzerdefinierten Connector verwendet wird.
+In dieser Übung erstellen Sie eine neue Azure Active Directory-Anwendung, die verwendet wird, um die Delegierten Berechtigungen für den benutzerdefinierten Connector bereitzustellen.
 
-Öffnen Sie einen Browser, und navigieren Sie zu [Azure Active Directory Admin Center](https://aad.portal.azure.com). Klicken Sie im linken Navigationsmenü auf den Link **Azure Active Directory** , und wählen Sie dann im Abschnitt **Verwalten** des **Azure Active Directory** -Blades den Eintrag **App Registrations** aus.
+Öffnen Sie einen Browser, und navigieren Sie zu [Azure Active Directory Admin Center](https://aad.portal.azure.com). Klicken Sie im linken Navigationsmenü auf den Link **Azure Active Directory** , und wählen Sie dann den Eintrag **App-Registrierungen** im Abschnitt **Manage** des **Azure Active Directory** Blade aus.
 
-![Ein Screenshot des Azure Active Directory-Blades im Azure Active Directory Admin Center](./images/app-reg-preview1.png)
+![Ein Screenshot des Azure Active Directory Blade im Azure Active Directory Admin Center](./images/app-reg-preview1.png)
 
-Wählen Sie das Menüelement **neue Registrierung** oben auf dem Blatt **App** -Registrierungen aus.
+Wählen Sie das **neue Registrierungs** Menüelement oben auf dem Blatt **App-Registrierungen** aus.
 
-![Ein Screenshot des Blades "App-Registrierungen" im Azure Active Directory Admin Center](./images/app-reg-preview2.png)
+![Ein Screenshot des Blatts "App-Registrierungen" im Azure Active Directory Admin Center](./images/app-reg-preview2.png)
 
-Geben `MS Graph Batch App` Sie in das Feld **Name** ein. Wählen Sie im Abschnitt **unterstützte Kontotypen** **Konten in einem beliebigen Organisations Verzeichnis**aus. Lassen Sie den Abschnitt Umleitungs- **URI** leer, und wählen Sie **registrieren**.
+Geben `MS Graph Batch App` Sie in das Feld **Name** ein. Wählen Sie im Abschnitt **unterstützte Kontotypen** die Option **Konten in einem beliebigen Organisations Verzeichnis**aus. Lassen Sie den Abschnitt **Umleitungs-URI** leer, und wählen Sie **registrieren**aus.
 
-![Screenshot des Registers "Application Blade" im Azure Active Directory Admin Center](./images/app-reg-preview3.png)
+![Ein Screenshot des Registers eines Anwendungs Blatts im Azure Active Directory Admin Center](./images/app-reg-preview3.png)
 
-Kopieren Sie auf dem Blade- **Batch-APP von MS Graph** die **Anwendungs-ID (Client)**. Sie benötigen dies in der nächsten Übung.
+Kopieren Sie auf dem Blatt **MS Graph-Batch-App** die **Anwendungs-ID (Client)**. Sie benötigen diese in der nächsten Übung.
 
-![Screenshot der registrierten Anwendungsseite](./images/app-reg-preview4.png)
+![Ein Screenshot der registrierten Anwendungsseite](./images/app-reg-preview4.png)
 
-Wählen Sie den Eintrag **API-Berechtigungen** im Abschnitt **Verwalten** des Batch-App-Blatts **MS Graph** aus. Wählen Sie **Berechtigung hinzufügen** unter **API-Berechtigungen**aus.
+Wählen Sie den Eintrag **API-Berechtigungen** im Abschnitt **Verwalten** des **MS Graph-Batch-App** -Blades aus. Wählen Sie **Hinzufügen einer Berechtigung** unter **API-Berechtigungen**aus.
 
-![Screenshot des API-Berechtigungs Blatts](./images/app-perms-preview1.png)
+![Ein Screenshot des API-Berechtigungs Blatts](./images/app-perms-preview1.png)
 
-Klicken Sie im Blatt **API-Berechtigungen anfordern** auf **Microsoft Graph**, und wählen Sie dann **Delegierte Berechtigungen**aus. Suchen `group`, und wählen Sie dann die Berechtigung **alle Gruppen mit Berechtigungen Lesen und schreiben** aus. Wählen Sie am unteren Rand des Blades **Berechtigungen hinzufügen** aus.
+Wählen Sie im Blade **API-Berechtigungen anfordern** die Option **Microsoft Graph**und dann **Delegierte Berechtigungen**aus. Suchen Sie `group`nach, und wählen Sie dann die Delegierte Berechtigung **alle Gruppen lesen und schreiben** aus. Klicken Sie unten im Blade auf **Berechtigungen hinzufügen** .
 
- ![Screenshot des Zugriffs Blatts für Anforderungs-API-Berechtigungen](./images/app-perms-preview2.png)
+ ![Ein Screenshot des Blades für Anforderungs-API-Berechtigungen](./images/app-perms-preview2.png)
 
-Wählen Sie den Eintrag **Zertifikate und** geheimen im Abschnitt **Verwalten** des Batch-App-Blatts **MS Graph** aus, und wählen Sie dann **neuer Client Schlüssel**aus. Geben `forever` Sie in die **Beschreibung** ein, und wählen Sie **nie** unter **Expires**aus. Wählen Sie **Hinzufügen** aus.
+Wählen Sie den Eintrag **Zertifikate und Geheimnisse** im Abschnitt **Verwalten** des **MS Graph-Batch-App** -Blades aus, und wählen Sie dann **neuer geheimer Client Schlüssel**aus. Geben `forever` Sie in die **Beschreibung** ein, und wählen Sie **nie** unter **Expires**aus. Wählen Sie **Hinzufügen** aus.
 
-![Ein Screenshot des "Certificate and Secrets"-Blatts](./images/app-key-preview1.png)
+![Ein Screenshot des Blatts "Zertifikat und Geheimnisse"](./images/app-key-preview1.png)
 
-Kopieren Sie den Schlüsselwert für den neuen Schlüssel. Sie benötigen dies in der nächsten Übung.
+Kopieren Sie den Schlüsselwert für den neuen Schlüssel. Sie benötigen diese in der nächsten Übung.
 
-![Screenshot des neuen geheimen Clients](./images/app-key-preview2.png)
+![Ein Screenshot des neuen geheimen Client Schlüssels](./images/app-key-preview2.png)
 
 > [!IMPORTANT]
-> Dieser Schritt ist wichtig, da der Schlüssel nicht zugegriffen werden kann, nachdem Sie dieses Blade geschlossen haben. Speichern Sie diesen Schlüssel in einem Text-Editor für die nächsten Übungen.
+> Dieser Schritt ist wichtig, da auf den Schlüssel nicht zugegriffen werden kann, nachdem Sie dieses Blade geschlossen haben. Speichern Sie diesen Schlüssel in einem Text-Editor zur Verwendung in bevorstehenden Übungen.
 
-Um die Verwaltung zusätzlicher Dienste, auf die über Microsoft Graph zugegriffen werden kann, einschließlich der Teams-Eigenschaften, zu ermöglichen, müssen Sie zusätzliche, geeignete Bereiche auswählen, um die Verwaltung bestimmter Dienste zu ermöglichen. Wenn Sie beispielsweise unsere Lösung erweitern möchten, um die Erstellung von OneNote-Notizbüchern oder Plan Plänen, Buckets und Aufgaben zu ermöglichen, müssen Sie die erforderlichen Berechtigungs Bereiche für die relevanten APIs hinzufügen.
+Um die Verwaltung zusätzlicher Dienste zu ermöglichen, die über Microsoft Graph zugänglich sind, einschließlich der Teams-Eigenschaften, müssen Sie zusätzliche, geeignete Bereiche auswählen, um die Verwaltung bestimmter Dienste zu ermöglichen. Um beispielsweise unsere Lösung so zu erweitern, dass OneNote-Notizbücher oder Planner-Pläne, Buckets und Aufgaben erstellt werden, müssen Sie die erforderlichen Berechtigungs Bereiche für die entsprechenden APIs hinzufügen.

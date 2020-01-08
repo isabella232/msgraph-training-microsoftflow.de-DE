@@ -1,42 +1,42 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-In dieser Übung erstellen Sie einen neuen benutzerdefinierten Connector, der in Flow oder in Azure Logic-Apps verwendet werden kann. Die Definitionsdatei für die Open-API ist mit dem korrekten Pfad für den `$batch` Microsoft Graph-Endpunkt und zusätzlichen Einstellungen für den einfachen Import vordefiniert.
+In dieser Übung erstellen Sie einen neuen benutzerdefinierten Connector, der in Flow oder in Azure Logic-Apps verwendet werden kann. Die Open API-Definitionsdatei ist mit dem korrekten Pfad für den Microsoft Graph `$batch` -Endpunkt und zusätzlichen Einstellungen zum Aktivieren des einfachen Imports vordefiniert.
 
-Erstellen Sie mit einem Text-Editor eine neue leere Datei `MSGraph-Delegate-Batch.swagger.json` mit dem Namen, und fügen Sie den folgenden Code hinzu.
+Erstellen Sie mithilfe eines Text-Editors eine neue leere Datei `MSGraph-Delegate-Batch.swagger.json` mit dem Namen, und fügen Sie den folgenden Code hinzu.
 
 [!code-json[](../LabFiles/MSGraph-Delegate-Batch.swagger.json)]
 
-Öffnen Sie einen Browser, und navigieren Sie zu [Microsoft Flow](https://flow.microsoft.com). Melden Sie sich mit Ihrem Office 365-mandantenadministrator Konto an. Klicken Sie oben rechts auf das Zahnradsymbol, und wählen Sie im Dropdownmenü das Element **benutzerdefinierte Verbinder** aus.
+Öffnen Sie einen Browser, und navigieren Sie zu [Microsoft Flow](https://flow.microsoft.com). Melden Sie sich mit Ihrem Office 365 mandantenadministrator Konto an. Wählen Sie das Zahnradsymbol in der oberen rechten Ecke aus, und wählen Sie im Dropdownmenü das Element **benutzerdefinierte Verbinder** aus.
 
-![Screenshot des Dropdownmenüs in Microsoft Flow](./images/flow-conn1.png)
+![Ein Screenshot des Dropdownmenüs in Microsoft Flow](./images/flow-conn1.png)
 
-Wählen Sie auf der Seite **benutzerdefinierte Connectors** den Link **benutzerdefinierten Verbinder erstellen** oben rechts aus, und wählen Sie dann im Dropdownmenü das Element **eine geöffnete API-Datei importieren** aus.
+Klicken Sie auf der Seite **benutzerdefinierte Connectors** auf den Link **benutzerdefinierten Verbinder erstellen** in der oberen rechten Ecke, und wählen Sie dann im Dropdownmenü das Element **Open API-Datei importieren** aus.
 
- ![Ein Screenshot des Dropdownmenüs benutzerdefinierte Verbindung erstellen in Microsoft Flow](./images/flow-conn2.png)
+ ![Ein Screenshot des Dropdownmenüs zum Erstellen eines benutzerdefinierten Connectors in Microsoft Flow](./images/flow-conn2.png)
 
-Geben `MS Graph Batch Connector` Sie in das Textfeld **benutzerdefinierter Connectorname** ein. Klicken Sie auf das Ordnersymbol, um die geöffnete API-Datei hochzuladen. Navigieren Sie zu `MSGraph-Delegate-Batch.swagger.json` der Datei, die Sie erstellt haben. Wählen Sie **weiter** , um die offene API-Datei hochzuladen.
+Geben `MS Graph Batch Connector` Sie in das Textfeld **Name des benutzerdefinierten Connectors** ein. Wählen Sie das Ordnersymbol aus, um die geöffnete API-Datei hochzuladen. Wechseln Sie zu `MSGraph-Delegate-Batch.swagger.json` der Datei, die Sie erstellt haben. Wählen Sie **weiter** aus, um die geöffnete API-Datei hochzuladen.
 
- ![Screenshot des Dialogfelds "benutzerdefinierten Connector erstellen"](./images/flow-conn3.png)
+ ![Ein Screenshot des Dialogfelds "benutzerdefinierten Connector erstellen"](./images/flow-conn3.png)
 
 Klicken Sie auf der Seite Connector-Konfiguration im Navigationsmenü auf den Link **Sicherheit** . Füllen Sie die Felder wie folgt aus.
 
 - **Wählen Sie aus, welche Authentifizierung von ihrer API implementiert wird**:`OAuth 2.0`
 - **Identitätsanbieter**:`Azure Active Directory`
 - **Client-ID**: die Anwendungs-ID, die Sie in der vorherigen Übung erstellt haben
-- **Geheimer Client**Schlüssel: die Taste, die Sie in der vorherigen Übung erstellt haben
+- **Geheimer Client**Schlüssel: der Schlüssel, den Sie in der vorherigen Übung erstellt haben
 - **Anmelde-URL**:`https://login.windows.net`
 - **Mandanten-ID**:`common`
-- **Ressourcen**-URL `https://graph.microsoft.com` : (keine Nachverfolgung/)
+- **Ressourcen**-URL `https://graph.microsoft.com` : (kein Trailing/)
 - **Bereich**: leer lassen
 
-Klicken Sie oben rechts auf **Verbinder erstellen** .
+Wählen Sie in der oberen rechten Ecke **Create Connector** aus.
 
-![Screenshot der Registerkarte "Sicherheit" in der Connector-Konfiguration](./images/flow-conn4.png)
+![Ein Screenshot der Registerkarte "Sicherheit" in der Connector-Konfiguration](./images/flow-conn4.png)
 
-Kopieren Sie nach der Erstellung des Connectors die generierte Umleitungs- **URL**.
+Nachdem der Connector erstellt wurde, kopieren Sie die generierte **Umleitungs-URL**.
 
-![Screenshot der generierten Umleitungs-URL](./images/flow-conn5.png)
+![Ein Screenshot der generierten Umleitungs-URL](./images/flow-conn5.png)
 
-Kehren Sie zur registrierten Anwendung im [Azure-Portal](https://aad.portal.azure.com) zurück, das Sie in der vorherigen Übung erstellt haben. Wählen Sie im Blatt **Einstellungen** die Option **Reply URLs** aus. Fügen Sie die Umleitungs- **URL** hinzu, die Sie als zusätzliche **Antwort-URL**kopiert haben. Speichern Sie die Anwendung in Azure Active Directory-Portal.
+Kehren Sie zur registrierten Anwendung im [Azure-Portal](https://aad.portal.azure.com) zurück, das Sie in der vorherigen Übung erstellt haben. Wählen Sie **Antwort-URLs** im Blade **Einstellungen** aus. Fügen Sie die **Umleitungs-URL** ein, die Sie als zusätzliche **Antwort-URL**kopiert haben. Speichern Sie die Anwendung im Azure Active Directory-Portal.
 
-![Screenshot des Blatts "Antwort-URLs" im Azure-Portal](./images/flow-conn6.png)
+![Ein Screenshot des Blatts "Antwort-URLs" im Azure-Portal](./images/flow-conn6.png)

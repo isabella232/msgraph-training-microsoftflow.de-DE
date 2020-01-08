@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-Sie haben das Lernprogramm Flow Microsoft Graph abgeschlossen. Nachdem Sie nun über einen funktionierenden benutzerdefinierten Connector verfügen, der Microsoft Graph aufruft, können Sie experimentieren und neue Features hinzufügen. Besuchen Sie die [Übersicht über Microsoft Graph](/graph/overview) , um alle Daten anzuzeigen, auf die Sie mit Microsoft Graph zugreifen können.
+Sie haben das Lernprogramm Flow Microsoft Graph abgeschlossen. Da Sie nun über einen funktionierenden benutzerdefinierten Connector verfügen, der Microsoft Graph aufruft, können Sie experimentieren und neue Features hinzufügen. Besuchen Sie die [Übersicht über Microsoft Graph](/graph/overview) , um alle Daten anzuzeigen, auf die Sie mit Microsoft Graph zugreifen können.
 
 ## <a name="feedback"></a>Feedback
 
-Feedback zu diesem Tutorial finden Sie im GitHub- [Repository](https://github.com/microsoftgraph/msgraph-training-microsoftflow).
+Geben Sie Feedback zu diesem Lernprogramm im [GitHub-Repository](https://github.com/microsoftgraph/msgraph-training-microsoftflow)an.
