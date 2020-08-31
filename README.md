@@ -1,28 +1,30 @@
-# <a name="microsoft-graph-training-module---create-a-microsoft-graph-json-batch-custom-connector-for-microsoft-flow--azure-logic-apps"></a>Microsoft Graph-Schulungsmodul – Erstellen eines Microsoft Graph-JSON-Batch-benutzerdefinierten Connectors für Microsoft Flow & Azure Logic-apps
+# <a name="microsoft-graph-training-module---create-a-microsoft-graph-json-batch-custom-connector-for-microsoft-power-automate--azure-logic-apps"></a>Microsoft Graph-Schulungsmodul – Erstellen eines benutzerdefinierten Microsoft Graph-Connectors für Microsoft Power automatisieren & Azure Logic-apps
 
-Dieses Modul enthält eine Einführung in die Verwendung der Microsoft Graph-JSON-Batch-Rest-API für den Zugriff auf Daten in Office 365. Sie erfahren, wie Sie einen benutzerdefinierten Konnektor für Flow erstellen und konfigurieren, auf die Microsoft Graph-JSON-Batch-API zugreifen und den benutzerdefinierten Konnektor in einem Flow verwenden, um ein Microsoft-Team zu erstellen.
+In diesem Modul wird das Arbeiten mit der Microsoft Graph JSON-Batchverarbeitung-Rest-API zum Zugreifen auf Daten in Office 365 vorgestellt. In diesem Artikel erfahren Sie, wie Sie einen benutzerdefinierten Connector für Microsoft Power Automation erstellen und konfigurieren, auf die Microsoft Graph JSON-Batch-API zugreifen und den benutzerdefinierten Connector in einem Flow zum Erstellen eines Microsoft-Teams verwenden.
 
-## <a name="lab---create-a-microsoft-graph-json-batch-custom-connector-for-microsoft-flow--azure-logic-apps"></a>Lab – Erstellen eines Microsoft Graph-JSON-Batch-benutzerdefinierten Connectors für Microsoft Flow & Azure Logic-apps
+## <a name="lab---create-a-microsoft-graph-json-batch-custom-connector-for-microsoft-power-automate--azure-logic-apps"></a>Lab-erstellen Sie einen Microsoft Graph JSON-Batch-Connector für Microsoft Power automatisieren & Azure Logic-apps
 
-In dieser Übungseinheit nutzen Sie die Microsoft Graph-JSON-Batch-Rest-API, um eine benutzerdefinierte Anwendung für Connector und Flow zu erstellen.
+In dieser Übungseinheit nutzen Sie die Microsoft Graph JSON-Batchverarbeitung-Rest-API, um eine benutzerdefinierte Anwendung für den Connector und den Fluss zu erstellen.
 
-- [Flow Microsoft Graph-Lernprogramm](https://docs.microsoft.com/graph/training/flow-tutorial)
+- [Power Automatisieren von Microsoft Graph Tutorial](https://docs.microsoft.com/graph/tutorials/powerautomate)
 
-## <a name="contributors"></a>Mitarbeiter
+## <a name="contributors"></a>Mitwirkende
 
-| Rollen | Autor (e) |
-| ------| ----------|
-| Übungs Handbücher | John Liu (Microsoft MVP, SharePointGurus) @johnnliu |
-| Übungs Handbücher | Pete Skelly (ThreeWill) @pskelly |
+| Rollen       | Autor (en)                                            |
+|-------------|------------------------------------------------------|
+| Lab-Handbücher | John Liu (Microsoft MVP, SharePointGurus) @johnnliu  |
+| Lab-Handbücher | Pete Skelly (ThreeWill) @pskelly                     |
+| Lab-Handbücher | Ayca Bas (Microsoft) @aycabas                        |
 
 ## <a name="version-history"></a>Versionsverlauf
 
-| Version | Datum | Kommentare |
-| ------- | -----| -------- |
-| 1.2 | 27. November 2018 | Onboarding zu docs.Microsoft.com/Graph |
-| 1.1 | November 07, 2018 | Inhalt von Schritt 6 zum Aufrufen mehrerer Vorgänge hinzugefügt. |
-| 1.0 | 22. Oktober 2018 | Hinzufügen von Microsoft Graph-bezogenen Produkt Ausbrüchen. |
+| Version | Datum              | Anmerkungen                                             |
+|---------|-------------------|------------------------------------------------------|
+| 1.3     | 24. August 2020   | Aktualisierung auf Power Automation                            |
+| 1.2     | 27. November 2018 | Onboarding zu docs.Microsoft.com/Graph                |
+| 1.1     | November 07, 2018 | Schritt 6-Inhalt zum Aufrufen mehrerer Vorgänge hinzugefügt |
+| 1.0     | 22. Oktober 2018  | Hinzufügen von Microsoft Graph-bezogenen Produkt Ausbrüchen.       |
 
-## <a name="disclaimer"></a>Verzichtserklärung
+## <a name="disclaimer"></a>Haftungsausschluss
 
-**Dieser Code wird ohne ** Gewähr bereitgestellt, weder ausdrücklich noch implizit, einschließlich impliziter Garantien der Eignung für einen bestimmten Zweck, MARKTGÄNGIGKEIT oder Nichtverletzung.**
+**Dieser Code wird ohne jegliche ausdrückliche oder implizite *Gewährleistung bereit* gestellt, einschließlich impliziter Garantien für die Eignung für einen bestimmten Zweck, die Marktgängigkeit oder die Nichtverletzung.**
